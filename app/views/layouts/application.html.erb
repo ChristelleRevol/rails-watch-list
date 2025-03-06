@@ -6,11 +6,24 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
   </head>
 
   <body>
+    <nav class="navbar bg-body-tertiary">
+      <div class="container-fluid mx-2">
+        <img src="https://images.freeimages.com/image/previews/db1/vintage-cinema-black-png-reel-5693185.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
+        <h3>Watch List</h3>
+      </div>
+    </nav>
+    <div class="container">
+
     <%= yield %>
+    </div>
   </body>
 </html>

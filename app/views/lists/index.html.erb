@@ -1,0 +1,13 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://media.gqmagazine.fr/photos/603e6a8da9360b0585bcbc6a/16:9/w_2560%2Cc_limit/108387402)">
+<h1 class="font-roboto fs-1">Lists</h1>
+</div>
+
+<div>
+  <% @lists.each do |l| %>
+  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://thumbs.dreamstime.com/b/romantic-double-exposure-heart-filmstrip-vintage-pink-aesthetic-background-design-valentines-day-any-occasion-immerse-354877910.jpg)">
+    <h3><%= link_to l.name, list_path(l), class: 'card-text'%></h3>
+  </div>
+  <% end %>
+</div>
+
+<%= link_to 'Add a list', new_list_path %>
