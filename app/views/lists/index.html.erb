@@ -2,12 +2,26 @@
 <h1 class="font-roboto fs-1">Lists</h1>
 </div>
 
-<div>
-  <% @lists.each do |l| %>
-  <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://thumbs.dreamstime.com/b/romantic-double-exposure-heart-filmstrip-vintage-pink-aesthetic-background-design-valentines-day-any-occasion-immerse-354877910.jpg)">
-    <h3><%= link_to l.name, list_path(l), class: 'card-text'%></h3>
-  </div>
-  <% end %>
-</div>
+<div class="d-flex w-100 mt-3 justify-content-between">
+<div class="d-flex w-75">
+  <% @lists.each do |list| %>
+    <%= link_to list_path(list), class: "mx-2" do %>
+      <% if list.photo.attached? %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= url_for(list.photo) %>')">
+        <h3 class="card-text"><%= list.name %></h3>
+        </div>
+      <% else %>
+        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://jsis.washington.edu/global/wp-content/uploads/sites/17/2022/03/clip-of-film-reel-and-classic-camera-spinning-with-right-side-light-and-warm-background-in-4k-free-video.jpg)">
+        <h3 class="card-text"><%= list.name %></h3>
+        </div>
+      <% end %>
 
-<%= link_to 'Add a list', new_list_path %>
+    <% end %>
+  <% end %>
+
+
+</div>
+<div class="mx-auto">
+  <%= link_to 'Add a list', new_list_path, class: "btn btn-success text-white h-15 shadow-sm rounded-4" %>
+</div>
+</div>

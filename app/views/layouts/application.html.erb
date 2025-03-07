@@ -15,13 +15,16 @@
   </head>
 
   <body>
-    <nav class="navbar bg-body-tertiary">
-      <div class="container-fluid mx-2">
+    <nav class="navbar bg-body-tertiary border-bottom">
+      <div class="container-fluid mx-2 d-flex justify-content-between">
         <img src="https://images.freeimages.com/image/previews/db1/vintage-cinema-black-png-reel-5693185.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-top">
+        <div class="d-flex">
+        <%= link_to 'Lists menu', root_path, class: "text-decoration-none me-5 fs-4 text-black align-item-center" %>
         <h3>Watch List</h3>
+        </div>
       </div>
     </nav>
-    <div class="container">
+    <div class="container bg-white vh-100">
 
     <%= yield %>
     </div>
